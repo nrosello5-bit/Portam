@@ -1,0 +1,73 @@
+import type { Merchant, Product } from '@/types'
+
+export const MOCK_MERCHANTS: Merchant[] = [
+  {
+    id: 'merchant-pizza-0000-0000-000000000001',
+    user_id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
+    name: 'Pizzeria La Plaça',
+    category: 'restaurants',
+    description: 'Les millors pizzes artesanals de L\'Ametlla del Vallès, fetes amb forn de pedra.',
+    address: 'Plaça de la Vila, 5, 08480 L\'Ametlla del Vallès',
+    lat: 41.6823,
+    lng: 2.2547,
+    is_open: true,
+    delivery_fee: 1.50,
+    min_order: 12.00,
+    logo_url: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: 'merchant-farma-0000-0000-000000000002',
+    user_id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
+    name: 'Farmàcia Central',
+    category: 'farmacies',
+    description: 'Productes de farmàcia, parafarmàcia i cosmètica. Lliurament ràpid al teu domicili.',
+    address: 'Carrer Major, 12, 08480 L\'Ametlla del Vallès',
+    lat: 41.6831,
+    lng: 2.2539,
+    is_open: true,
+    delivery_fee: 2.00,
+    min_order: 8.00,
+    logo_url: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: 'merchant-super-0000-0000-000000000003',
+    user_id: 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb',
+    name: 'Supermercat Ametlla',
+    category: 'supermercats',
+    description: 'Tot el que necessites per a la llar. Frescos, congelats i productes de neteja.',
+    address: 'Avinguda del Vallès, 23, 08480 L\'Ametlla del Vallès',
+    lat: 41.6815,
+    lng: 2.2562,
+    is_open: false,
+    delivery_fee: 1.00,
+    min_order: 15.00,
+    logo_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=400',
+    created_at: new Date().toISOString(),
+  },
+]
+
+export const MOCK_PRODUCTS: Record<string, Product[]> = {
+  'merchant-pizza-0000-0000-000000000001': [
+    { id: 'p1', merchant_id: 'merchant-pizza-0000-0000-000000000001', name: 'Pizza Margherita', description: 'Tomàquet, mozzarella fresca i alfàbrega. La clàssica de sempre.', price: 11.50, category: 'Pizzes', image_url: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p2', merchant_id: 'merchant-pizza-0000-0000-000000000001', name: 'Pizza Prosciutto', description: 'Tomàquet, mozzarella i pernil dolç italià.', price: 13.50, category: 'Pizzes', image_url: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p3', merchant_id: 'merchant-pizza-0000-0000-000000000001', name: 'Pizza Quatre Formatges', description: 'Mozzarella, gorgonzola, parmesà i brie.', price: 14.00, category: 'Pizzes', image_url: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p4', merchant_id: 'merchant-pizza-0000-0000-000000000001', name: 'Amanida Caprese', description: 'Tomàquet, mozzarella fresca i alfàbrega.', price: 7.50, category: 'Amanides', image_url: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p5', merchant_id: 'merchant-pizza-0000-0000-000000000001', name: 'Tiramisú casolà', description: 'Recepta de la casa, fet cada dia.', price: 4.50, category: 'Postres', image_url: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p6', merchant_id: 'merchant-pizza-0000-0000-000000000001', name: 'Coca-Cola 33cl', description: 'Beguda refrescant.', price: 2.00, category: 'Begudes', image_url: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400', available: true, created_at: new Date().toISOString() },
+  ],
+  'merchant-farma-0000-0000-000000000002': [
+    { id: 'p7', merchant_id: 'merchant-farma-0000-0000-000000000002', name: 'Paracetamol 1g (10 comp.)', description: 'Analgèsic i antipirètic. Sense recepta.', price: 3.20, category: 'Analgèsics', image_url: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p8', merchant_id: 'merchant-farma-0000-0000-000000000002', name: 'Ibuprofèn 400mg (20 comp.)', description: 'Antiinflamatori i analgèsic.', price: 4.50, category: 'Analgèsics', image_url: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p9', merchant_id: 'merchant-farma-0000-0000-000000000002', name: 'Crema solar SPF50+ 200ml', description: 'Protecció solar alta per a tota la família.', price: 12.90, category: 'Solar', image_url: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p10', merchant_id: 'merchant-farma-0000-0000-000000000002', name: 'Vitamina C 1000mg (30 comp.)', description: 'Reforç del sistema immunològic.', price: 8.50, category: 'Vitamines', image_url: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', available: true, created_at: new Date().toISOString() },
+  ],
+  'merchant-super-0000-0000-000000000003': [
+    { id: 'p11', merchant_id: 'merchant-super-0000-0000-000000000003', name: 'Pa de motlle integral', description: 'Pa de motlle 100% integral. 500g.', price: 1.85, category: 'Pa i cereals', image_url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p12', merchant_id: 'merchant-super-0000-0000-000000000003', name: 'Llet semidesnatada 1L', description: 'Llet pasteuritzada de vaca.', price: 0.99, category: 'Làctics', image_url: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p13', merchant_id: 'merchant-super-0000-0000-000000000003', name: 'Tomàquets cherry 250g', description: 'Tomàquets cherry frescos de temporada.', price: 1.99, category: 'Fruites i verdures', image_url: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p14', merchant_id: 'merchant-super-0000-0000-000000000003', name: 'Pasta espaguetis 500g', description: 'Pasta de sèmola de blat dur.', price: 1.20, category: 'Pasta i arròs', image_url: 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=400', available: true, created_at: new Date().toISOString() },
+    { id: 'p15', merchant_id: 'merchant-super-0000-0000-000000000003', name: 'Aigua mineral 6x1.5L', description: 'Pack de 6 ampolles d\'1,5 litres.', price: 3.20, category: 'Begudes', image_url: 'https://images.unsplash.com/photo-1559839914-17aae19cec71?w=400', available: true, created_at: new Date().toISOString() },
+  ],
+}
